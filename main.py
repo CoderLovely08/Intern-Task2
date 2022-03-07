@@ -65,3 +65,14 @@ for i in range(rows):
                 time_taken.append(data.loc[i,f'Topic Test {tt} - time-taken (seconds)'])
                 wrong.append(data.loc[i,f'Topic Test {tt}- wrong'])
             tt+=1
+df={}
+df['Name']=name
+df['Username']=username
+df['Chapter Tag']=ch_tag
+df['Test_Name']=test_name
+df['answered']=answered
+df['correct']=correct
+df['score']=score
+df['skipped']=skipped
+df['time-taken (seconds)']=time_taken
+df['wrong']=wrong
