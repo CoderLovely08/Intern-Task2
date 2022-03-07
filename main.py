@@ -76,3 +76,4 @@ df['score']=score
 df['skipped']=skipped
 df['time-taken (seconds)']=time_taken
 df['wrong']=wrong
+newdf=pd.DataFrame(df)
