@@ -21,10 +21,13 @@ skipped=[]
 time_taken=[]
 wrong=[]
 
+#to iterate over each candidate data
 for i in range(rows):
     ct=1
     tt=1
     fct=1
+    
+    #to iterate over each concept test of each data and append the corresponding info
     while ct<=5:		
         if data.loc[i,f'Concept Test {ct} - score']!='-':
             name.append(data.loc[i,'Name'])
@@ -38,6 +41,8 @@ for i in range(rows):
             time_taken.append(data.loc[i,f'Concept Test {ct} - time-taken (seconds)'])
             wrong.append(data.loc[i,f'Concept Test {ct}- wrong'])
         ct+=1
+    
+    #to iterate over each full chapter test data of each candidate
     while fct<=2:
         if data.loc[i,f'Full Chapter Test {fct} - score']!='-':
             name.append(data.loc[i,'Name'])
@@ -52,6 +57,7 @@ for i in range(rows):
             wrong.append(data.loc[i,f'Full Chapter Test {fct}- wrong'])
         fct+=1
         
+        #to iterate over each topic test data of each candidate
         while tt<=2:
             if data.loc[i,f'Topic Test {tt} - score']!='-':
                 name.append(data.loc[i,'Name'])
@@ -65,6 +71,8 @@ for i in range(rows):
                 time_taken.append(data.loc[i,f'Topic Test {tt} - time-taken (seconds)'])
                 wrong.append(data.loc[i,f'Topic Test {tt}- wrong'])
             tt+=1
+
+#empty dictionary for create dataframe at later stage
 df={}
 df['Name']=name
 df['Username']=username
@@ -76,5 +84,16 @@ df['score']=score
 df['skipped']=skipped
 df['time-taken (seconds)']=time_taken
 df['wrong']=wrong
+
+#creates a data frame out of the given dictionary
 newdf=pd.DataFrame(df)
+
+#to create an excel file out of the data frame
 newdf.to_excel('Output_1.xlsx')
+
+
+
+##notes 
+#the program is capable of handling edge cases like if a student dosen't appear for a particular test
+#in order to use the program the the input format is given along with the main.py file
+#just change the name of the file in 6th line of program and change the name output file name for the same at line no. 92
