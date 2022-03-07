@@ -51,3 +51,17 @@ for i in range(rows):
             time_taken.append(data.loc[i,f'Full Chapter Test {fct} - time-taken (seconds)'])
             wrong.append(data.loc[i,f'Full Chapter Test {fct}- wrong'])
         fct+=1
+        
+        while tt<=2:
+            if data.loc[i,f'Topic Test {tt} - score']!='-':
+                name.append(data.loc[i,'Name'])
+                username.append(data.loc[i,'id'])
+                ch_tag.append(data.loc[i,'Chapter Tag'])
+                test_name.append(f'Topic Test {tt}')
+                answered.append(data.loc[i,f'Topic Test {tt} - answered'])
+                correct.append(data.loc[i,f'Topic Test {tt}- correct'])
+                score.append(data.loc[i,f'Topic Test {tt} - score'])
+                skipped.append(data.loc[i,f'Topic Test {tt}- skipped'])
+                time_taken.append(data.loc[i,f'Topic Test {tt} - time-taken (seconds)'])
+                wrong.append(data.loc[i,f'Topic Test {tt}- wrong'])
+            tt+=1
