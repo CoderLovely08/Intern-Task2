@@ -77,3 +77,4 @@ df['skipped']=skipped
 df['time-taken (seconds)']=time_taken
 df['wrong']=wrong
 newdf=pd.DataFrame(df)
+newdf.to_excel('Output_1.xlsx')
