@@ -21,3 +21,7 @@ skipped=[]
 time_taken=[]
 wrong=[]
 
+for i in range(rows):
+	ct=1
+	tt=1
+	fct=1
