@@ -22,6 +22,19 @@ time_taken=[]
 wrong=[]
 
 for i in range(rows):
-	ct=1
-	tt=1
-	fct=1
+    ct=1
+    tt=1
+    fct=1
+    while ct<=5:		
+        if data.loc[i,f'Concept Test {ct} - score']!='-':
+            name.append(data.loc[i,'Name'])
+            username.append(data.loc[i,'id'])
+            ch_tag.append(data.loc[i,'Chapter Tag'])
+            test_name.append(f'Concept Test {ct}')
+            answered.append(data.loc[i,f'Concept Test {ct} - answered'])
+            correct.append(data.loc[i,f'Concept Test {ct}- correct'])
+            score.append(data.loc[i,f'Concept Test {ct} - score'])
+            skipped.append(data.loc[i,f'Concept Test {ct}- skipped'])
+            time_taken.append(data.loc[i,f'Concept Test {ct} - time-taken (seconds)'])
+            wrong.append(data.loc[i,f'Concept Test {ct}- wrong'])
+        ct+=1
